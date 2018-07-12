@@ -1,95 +1,137 @@
 @import url('https://fonts.googleapis.com/css?family=Lato');
 * {
-	box-sizing: border-box;
+  box-sizing: border-box;
 }
+
+/*-------Title and search field------*/
+
 body {
   font-family: 'Lato', sans-serif;
+  text-align: center;
 }
+
+h2 {
+  font-weight: 600;
+  font-size: 25px;
+  color: grey;
+  margin-top: 20px;
+}
+
+.search {
+  margin: 20px 0;
+  width: 350px;
+  height: 35px;
+  border: none;
+  border: 1px solid grey;
+  border-radius: 5px;
+  color: grey;
+  padding: 10px;
+}
+
+.search:placeholder {
+  color: red;
+}
+
+/*-------Container-----*/
+
 .container {
-  width: 90%;
+  width: 95%;
   margin: 0 auto;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   flex-wrap: wrap;
   z-index: 10;
+  margin-bottom: 30px;
 }
+
+/*-------Block with people------*/
+
 .blockUser {
   display: flex;
   width: 100%;
   padding-left: 15px;
   border-radius: 10px;
-  border: 1px solid rgba(0,0,0,.2);
+  border: 1px solid rgba(0, 0, 0, .2);
   margin-top: 20px;
   align-items: center;
   height: 130px;
   cursor: pointer;
-  box-shadow: 5px 4px 13px -4px rgba(0, 0, 0, 0.63)
+  box-shadow: 5px 4px 13px -4px rgba(0, 0, 0, 0.63);
+  overflow: hidden;
 }
+
 .photo {
   height: 85px;
   width: 85px;
   border-radius: 50%;
 }
+
 .photoModal {
   display: block;
   margin: 0 auto 15px;
   border-radius: 50%;
   width: 120px;
   height: 120px;
-
 }
+
 .textInfo {
   margin-left: 10px;
 }
-.name {
+
+.nameMain, .name {
   font-weight: 600;
 }
+
 .email {
   margin: 10px 0;
+  letter-spacing: -1px;
 }
-.street,
-.state,
-.postcode,
-.birthday,
-.email,
-.cell,
-.city {
+
+.street, .state, .postcode, .birthday, .email, .cell, .city {
   color: grey;
 }
+
 .cell {
   margin-bottom: 15px;
 }
+
 .birthday {
   margin-top: 15px;
 }
-.wrapModalUser{
+
+/*-------Pop Up Modal window------*/
+
+.wrapModalUser {
   top: 0;
   right: 0;
   width: 100%;
   height: 100%;
   position: fixed;
-  background: rgba(0,0,0,.5);
+  background: rgba(0, 0, 0, .5);
   z-index: 100;
   display: none;
 }
-.border{
+
+.border {
   margin-top: 20px;
   padding-top: 20px;
   border-top: 1px solid grey;
 }
+
 .modalUser {
   display: flex;
   flex-direction: column;
-  margin:auto;
+  margin: auto;
   text-align: center;
   position: relative;
   background: white;
   padding: 20px 40px;
   border-radius: 10px;
-	width: 50%;
-	min-width: 310px;
+  width: 50%;
+  min-width: 310px;
 }
-.imgCross{
+
+.imgCross {
   position: absolute;
   top: 0;
   right: 0;
@@ -98,36 +140,43 @@ body {
   padding: 5px;
   cursor: pointer;
 }
+
 .imgRigth {
   position: absolute;
   top: calc(50% - 15px);
   right: 5px;
   height: 50px;
-	cursor: pointer;
-	padding: 10px;
+  cursor: pointer;
+  padding: 10px;
 }
+
 .imgLeft {
   position: absolute;
   top: calc(50% - 15px);
   left: 5px;
   height: 50px;
   transform: rotate(180deg);
-	cursor: pointer;
-	padding: 10px;
+  cursor: pointer;
+  padding: 10px;
 }
 
-@media (min-width: 768px) {
-  .blockUser {
-    width: 45%;
-  }
+/*-------Media queries------*/
 
+@media (min-width: 750px) {
+  .blockUser {
+    width: 48%;
+  }
+  .modalUser {
+    width: 40%;
+  }
 }
 
 @media (min-width: 1024px) {
   .blockUser {
-    width: 30%;
+    width: 32%;
   }
-	.modalUser	{
-		width: 35%;
-	}
+  .modalUser {
+    width: 30%;
+
+  }
 }
