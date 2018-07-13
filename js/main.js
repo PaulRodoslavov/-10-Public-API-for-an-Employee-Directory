@@ -22,6 +22,7 @@ fetch('https://randomuser.me/api/?results=12&nat=us,ca,gb')
 
     //----get data and create blocks----//
 
+
     let infoUsers = data.results;
     for (let i = 0; i < infoUsers.length; i++) {
       let image = infoUsers[i].picture.large;
@@ -64,7 +65,7 @@ fetch('https://randomuser.me/api/?results=12&nat=us,ca,gb')
       let street = titleCase(element.location.street);
       let state = titleCase(element.location.state);
       let postcode = element.location.postcode;
-      let birthday = '05/13/1990';
+      let birthday = "Birthday: "+element.dob.date.substr(5, 2)+"/"+element.dob.date.substr(8, 2)+"/"+element.dob.date.substr(2, 2);
 
       wrapModalUser.style.display = "flex";
       wrapModalUser.innerHTML = `
